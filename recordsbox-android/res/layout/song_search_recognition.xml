@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:id="@+id/imageView" android:src="@drawable/listen_doodle" android:layout_gravity="center_horizontal"/>
+    <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:gravity="center|center_vertical"
+                android:layout_gravity="center">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/catchSongStatusIcon" android:src="@drawable/ic_speaker" android:padding="10dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" android:layout_gravity="center"
+                    android:id="@+id/catchSongStatus" android:text="staaaatus"/>
+        </LinearLayout>
+        <view android:layout_width="250dp"
+              android:layout_height="250dp"
+              class="com.sergiandreplace.recordsbox.ui.view.HoloCircularProgressBar" android:id="@+id/catchSongProgressBar"
+              android:layout_gravity="center" android:focusable="true" style="@style/CircularProgressBarLight"/>
+</FrameLayout>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:background="@drawable/box" android:padding="15dp">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text"
+            android:id="@+id/trackTitle" android:textSize="24sp" android:textStyle="bold"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:id="@+id/trackAlbumCover" android:src="@drawable/ic_album" android:scaleType="centerInside"
+                    android:cropToPadding="false" android:layout_gravity="top"/>
+            <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/trackAlbumCoverProgress" android:layout_gravity="center" android:indeterminate="true"
+                    android:indeterminateDrawable="@drawable/ic_album" android:indeterminateBehavior="repeat"
+                    android:indeterminateOnly="false" android:indeterminateDuration="300"
+                    android:progressDrawable="@drawable/ic_album"/>
+        </FrameLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:layout_marginLeft="5dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Text"
+                      android:id="@+id/trackArtist" android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="0dp" android:text="New Text"
+                      android:id="@+id/trackAlbumTitle" android:textSize="14sp" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_weight="1">
+        <TextView android:layout_width="0dp" android:layout_height="fill_parent" android:text="New Text"
+                  android:id="@+id/trackAlbumReleaseYear" android:textSize="14sp" android:layout_gravity="bottom"
+                  android:layout_weight="1"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="fill_parent"
+                  android:text="New Text" android:id="@+id/trackPosition" android:textSize="14sp"
+                  android:layout_gravity="bottom"/>
+    </LinearLayout>
+</LinearLayout>

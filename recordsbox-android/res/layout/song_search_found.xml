@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView" android:src="@drawable/headphones_doodle" android:scaleType="center"
+                android:layout_weight="1" android:adjustViewBounds="true" android:layout_gravity="bottom|right"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_gravity="top">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Found it!"
+                    android:id="@+id/textView" android:textSize="80sp" android:layout_margin="20dp"
+                    android:layout_gravity="center_horizontal"/>
+            <view android:layout_width="fill_parent"
+                  android:layout_height="0dp"
+                  class="com.sergiandreplace.recordsbox.ui.view.TrackView" android:id="@+id/songFoundTrack"
+                  android:orientation="horizontal" android:layout_margin="10dp" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cool! Keep it"
+                    android:id="@+id/songFoundKeep" android:textSize="40sp"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mmmm, let's try again"
+                    android:id="@+id/songFoundBack" android:textSize="12sp"
+                    android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </FrameLayout>
