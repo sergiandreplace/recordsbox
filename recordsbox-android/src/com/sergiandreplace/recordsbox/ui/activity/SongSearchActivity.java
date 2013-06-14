@@ -61,5 +61,6 @@ public class SongSearchActivity extends Activity implements SongSearchRecognitio
     public void onSongFoundKeep() {
         ContentValues values=new TracksCursorHelper().setValues(track);
         getContentResolver().insert(ContentContract.TracksCursor.CONTENT_URI_DIR, values);
+        getContentResolver().notifyChange(ContentContract.AlbumsCursor.CONTENT_URI_DIR, null);
         finish();    }
 }

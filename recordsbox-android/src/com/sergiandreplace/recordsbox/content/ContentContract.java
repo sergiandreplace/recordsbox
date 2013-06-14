@@ -58,7 +58,7 @@ public final class ContentContract {
             public static final String ALBUM_ID = DatabaseContract.TracksTable.Columns.ALBUM_ID;
             public static final String ALBUM_RELEASE_YEAR = DatabaseContract.TracksTable.Columns.ALBUM_RELEASE_YEAR;
             public static final String ALBUM_TRACK_COUNT = DatabaseContract.TracksTable.Columns.ALBUM_TRACK_COUNT;
-            public static final String TRACK_NUMBER = DatabaseContract.TracksTable.Columns.TRACK_NUMBER;
+            public static final String TRACKS = "tracks";
             public static final String ALBUM_REVIEW_URL = DatabaseContract.TracksTable.Columns.ALBUM_REVIEW_URL;
             ;
         }

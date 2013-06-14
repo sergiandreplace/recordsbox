@@ -37,7 +37,7 @@ public class SimpleMinionContentProvider implements MinionContentProvider {
     @Override
     public long insert(SQLiteDatabase db, Uri uri, ContentValues contentValues) {
 
-        return db.insert(tableName, "", contentValues);
+        return db.insertWithOnConflict(tableName, "", contentValues,SQLiteDatabase.CONFLICT_REPLACE);
     }
 
     @Override

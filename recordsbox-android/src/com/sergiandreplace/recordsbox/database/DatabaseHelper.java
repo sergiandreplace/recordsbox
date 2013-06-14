@@ -31,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private void createEventsTable(SQLiteDatabase db) {
         StringBuilder sb = new StringBuilder();
         sb.append("CREATE TABLE ").append(TracksTable.TABLE_NAME).append(" (").
-                append(TracksTable.Columns._ID).append(" TEXT, ").
+                append(TracksTable.Columns._ID).append(" TEXT PRIMARY KEY, ").
                 append(TracksTable.Columns.ALBUM_TITLE).append(" TEXT, ").
                 append(TracksTable.Columns.ALBUM_ARTIST).append(" TEXT, ").
                 append(TracksTable.Columns.ARTIST).append(" TEXT, ").
@@ -45,6 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 append(TracksTable.Columns.SONG_POSITION).append(" NUMBER, ").
                 append(TracksTable.Columns.ALBUM_REVIEW_URL).append(" TEXT, ").
                 append(TracksTable.Columns.ARTIST_BIOGRAPHY_URL).append(" TEXT, ").
+                append(TracksTable.Columns.ALBUM_ID).append(" TEXT, ").
                 append(TracksTable.Columns.ARTIST_IMAGE_URL).append(" TEXT)");
 
         db.execSQL(sb.toString());

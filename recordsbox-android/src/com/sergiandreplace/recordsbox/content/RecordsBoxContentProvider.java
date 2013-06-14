@@ -22,7 +22,7 @@ public class RecordsBoxContentProvider extends DespicableContentProvider {
     @Override
     public void recruitMinions() {
         addMinion(new SimpleMinionContentProvider(ContentContract.TracksCursor.PATH_DIR, TracksTable.TABLE_NAME, TracksCursor.CONTENT_TYPE_DIR));
-        //addMinion(new SimpleItemMinionContentProvider(ContentContract.TracksCursor.PATH_ITEM, TracksTable.TABLE_NAME, TracksCursor.CONTENT_TYPE_ITEM));
+        addMinion(new AlbumsContentProvider());
     }
 
     @Override

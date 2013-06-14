@@ -1,8 +1,11 @@
 package com.sergiandreplace.recordsbox.ui.fragment;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,6 +74,18 @@ public class SongSearchRecognitionFragment extends Fragment implements GNSearchR
             if (onTrackFoundListener!=null) {
                 onTrackFoundListener.onTrackFound(track);
             }
+        } else {
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
+
+            dlgAlert.setMessage("I'm not quite sure about the song, maybe you need to try again");
+            dlgAlert.setTitle("Oooops!");
+            dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    getActivity().finish();
+                }
+            });
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
         }
     }
 
@@ -97,6 +112,13 @@ public class SongSearchRecognitionFragment extends Fragment implements GNSearchR
                 catchSongStatus.setText("Looking in the cloud");
                 }
             if (previousStatus==GNStatusEnum.RECORDING && gnStatus.getStatus()!=GNStatusEnum.RECORDING) {
+                try {
+                    Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(200);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 hideView(catchSongProgressBar);
             }
             catchSongProgressBar.setProgress(gnStatus.getPercentDone()/100f);
